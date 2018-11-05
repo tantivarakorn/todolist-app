@@ -11,9 +11,15 @@ export class AppComponent {
   addTaskToList(newtask){
     this.todoList.push(
       {
-        text: newtask
+        text: newtask,
+        id:Math.floor(Math.random() * Math.floor(10000)),
+        is_done : false
       });
   }
+  deleteTodo(id){
+    this.todoList = this.todoList.filter(todo => todo.id !==id);
+  }
+
 
 }
  

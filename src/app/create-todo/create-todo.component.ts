@@ -9,6 +9,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class CreateTodoComponent implements OnInit {
   taskName = '';
+  showErrorMessage = false;
 
   @Output()
   taskAdded = new EventEmitter();
@@ -20,10 +21,13 @@ export class CreateTodoComponent implements OnInit {
   }
 
   addTask(){
-       
+      if(this.taskName){
+       this.showErrorMessage = false;
        this.taskAdded.emit(this.taskName);
        this.taskName = '';
-  }
+  } else{
+    this.showErrorMessage = true;
+  }}
 
 }
  

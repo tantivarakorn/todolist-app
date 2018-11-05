@@ -1,3 +1,5 @@
-<input type="text" (keyup.enter)="addTask()" [(ngModel)]="taskName" >
-
+<div class="mt-3 mb-3">
+<input class="form" type="text" (keyup.enter)="addTask()" [(ngModel)]="taskName"  placeholder="Create New Task" class="form-control">
+<small  style="color:lightcoral" *ngIf="showErrorMessage"> Type something  </small>
+</div>
  
